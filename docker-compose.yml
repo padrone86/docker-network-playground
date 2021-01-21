@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb_test
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: playground
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: db_pass
+      TZ: "Asia/Tokyo"
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports:
+      - 3307:3306
